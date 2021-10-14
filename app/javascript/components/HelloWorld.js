@@ -1,40 +1,36 @@
-import React from "react"
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import PropTypes from "prop-types"
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Button from 'react-bootstrap/Button';
+import List from 'react-bootstrap/List';
+import { getMessages } from '../redux/Messages';
+import './App.css';
+import { ListGroup } from 'react-bootstrap';
 
-const GET_GREETINGS = "GET_GREETINGS_REQUEST";
-const GET_GREETINGS_SUCCESS = "GET_GREETINGS_SUCCESS";
+const Greeting = () => {
+  const messages = useSelector((state) => state.messageReducer);
 
-function getGreetings() {
-  console.log('getGreetings() Action!!')
-  return dispatch => {
-    dispatch({ type: GET_GREETINGS });
-    return fetch('v1/greetings.json')
-      .then(response => response.json())
-      .then(json => dispatch({ type: GET_GREETINGS_SUCCESS, payload: json }))
-      .catch(error => console.log(error));
+  const [message, setMessage] = useState({});
+  const { greeting, id } = message;
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (!messages.length) {
+      dispatch(getMessages());
+    }
+  }, []);
+
+  const collage = () => {
+    setMessage(messages[Math.floor(Math.random() * messages.length)]);
   };
+
+  return (
+    <ListGroup>
+      <Button primary onClick={collage}>Load Messages</Button>
+      <ListGroup.Item key={id}>
+        <h4>{greeting}</h4>
+      </ListGroup.Item>
+    </ListGroup>
+  );
 };
 
-export function getGreetingsSuccess(json) {
-  return {
-    type: GET_GREETINGS_SUCCESS,
-    payload: json
-  }
-}
-
-class HelloWorld extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-        Greeting: {this.props.greeting}
-      </React.Fragment>
-    );
-  }
-}
-
-HelloWorld.propTypes = {
-  greeting: PropTypes.string
-};
-export default HelloWorld
+export default Greeting;

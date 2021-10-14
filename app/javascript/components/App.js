@@ -11,23 +11,19 @@ import Nav from './Nav'
 
 import configureStore from '../redux/configStore'
 const store = configureStore();
+import React from 'react';
+import { Provider } from 'react-redux';
+import './App.css';
 
-class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <Provider store={store} >
-        <BrowserRouter>
-        <hi>Hello World</hi>
-        <Switch>
-          <Route exact path='/' render={() => ("Home!")} />
-          <Route path='/hello' render={() => <HelloWorld greeting="Friend"/>} />
-        </Switch>
-      </BrowserRouter>
-      </Provider>
-      </div>
-    );
-  }
+import store from '../redux/ConfigureStore';
+import Greeting from './HelloWorld';
+
+function App() {
+  return (
+    <Provider store={store}>
+      <Greeting />
+    </Provider>
+  );
 }
 
-export default App
+export default App;

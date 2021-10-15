@@ -6,7 +6,7 @@
 // import Rails from '@rails/ujs';
 // import Turbolinks from 'turbolinks';
 // import * as ActiveStorage from '@rails/activestorage';
-// import 'semantic-ui-css/semantic.min.css';
+import 'semantic-ui-css/semantic.min.css';
 // import 'channels';
 const componentRequireContext = require.context('components', true);
 const ReactRailsUJS = require('react_ujs');

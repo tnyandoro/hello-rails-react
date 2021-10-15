@@ -1,33 +1,37 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { List, Button } from 'semantic-ui-react';
 import { getMessages } from '../redux/Messages';
-import './App.css';
 
 const Greeting = () => {
   const messages = useSelector((state) => state.messageReducer);
-
   const [message, setMessage] = useState({});
-  const { greeting, id } = message;
+
+  setTimeout(() => {
+    window.location.reload(1);
+  }, 10000);
 
   const dispatch = useDispatch();
   useEffect(() => {
     if (!messages.length) {
       dispatch(getMessages());
     }
-    console.log('messages');
   }, []);
 
-  const shuffle = () => {
-    console.log('Can you me');
-    setMessage(messages[Math.floor(Math.random() * messages.length)]);
-  };
+  const [greeting, displayBody] = useState([]);
+
+  useEffect(() => {
+    displayBody(messages);
+  }, [messages]);
+
+  const collade = () => messages[0]
+   && messages[Math.floor(Math.random() * messages.length)].greeting;
+
   return (
-    <div>
-      <button type="button" onClick={shuffle}>Load Messages</button>
-      <div key={id}>
-        <h4>{greeting}</h4>
-      </div>
+
+    <div className="display">
+      <h2>Today we greet you </h2>
+      <p>{messages && collade()}</p>
     </div>
   );
 };

@@ -6,13 +6,13 @@
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby
+- React and Javascript
+- Postgresql
 
 ## Live Demo
 
@@ -48,6 +48,7 @@ Setup database with:
 
 ```
    rails db:create
+   rails db:seed
    rails db:migrate
 ```
 
@@ -61,7 +62,6 @@ Setup database with:
 
 ## Testing
 
-- Run Rspec 'rspec -f -d'
 
 
 ## Authors

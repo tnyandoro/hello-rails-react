@@ -1,0 +1,17 @@
+.nav {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #193498;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+}
+.nav a {
+    color: #193498;
+    text-decoration: none;
+    padding: 0;
+}
+.nav a:hover {
+    color: #113cfc;
+    text-decoration: underline;
+}

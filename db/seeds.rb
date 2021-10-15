@@ -3,5 +3,31 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#  
+messages = Message.create([
+    {
+      id: 71,
+      greeting: 'Howzit buddy'
+    },
+    {
+      id: 72,
+      greeting: 'Titambire'
+    },
+    {
+      id: 83,
+      greeting: 'Share a smile today will be a great day'
+    },
+    {
+      id: 54,
+      greeting: 'Today is great day'
+    },
+    {
+      id: 55,
+      greeting: 'You are looking great to day friend'
+    },
+    {
+      id: 36,
+      greeting: 'Hey hows your day'
+    }
+  ])
+  

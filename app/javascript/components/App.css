@@ -1,16 +1,16 @@
 .item-list {
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- color:crimson;
- margin: 50px 200px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: crimson;
+  margin: 50px 200px;
 }
 
 .display {
- display: flex;
- flex-direction: row;
- flex-wrap: wrap;
- justify-content: space-around;
- align-items: center;
- margin-top: 1rem;;
- font-size: 16px;
- color:coral;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+  font-size: 16px;
+  color: rgb(230, 75, 18);
 }

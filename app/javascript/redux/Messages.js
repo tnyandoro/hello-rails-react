@@ -5,8 +5,6 @@ const loadMessages = (json) => ({
   json,
 });
 
-// const initialState = ['Hello bro', 'Buy goods', 'Good morning'];
-
 const messageReducer = (state = [], action) => {
   switch (action.type) {
     case GET_MESSAGES:

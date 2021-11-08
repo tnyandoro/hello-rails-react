@@ -3,31 +3,29 @@
 #
 # Examples:
 #
-#  
 messages = Message.create([
     {
-      id: 71,
+      id: 1,
       greeting: 'Howzit buddy'
     },
     {
-      id: 72,
+      id: 2,
       greeting: 'Titambire'
     },
     {
-      id: 83,
+      id: 3,
       greeting: 'Share a smile today will be a great day'
     },
     {
-      id: 54,
+      id: 4,
       greeting: 'Today is great day'
     },
     {
-      id: 55,
+      id: 5,
       greeting: 'You are looking great to day friend'
     },
     {
-      id: 36,
+      id: 6,
       greeting: 'Hey hows your day'
     }
   ])
-  
